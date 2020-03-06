@@ -6,7 +6,7 @@ then
 fi
 
 cat body.json \
-	| sed "s/RB_THU_ID/$RB_THU_ID/g" \
+	| sed "s/THU_ID/$THU_ID/g" \
 	| sed "s/RB_DPT_ID/$RB_DPT_ID/g" \
 	| sed "s/RB_DPT_NAME/$RB_DPT_NAME/g" \
 	| sed "s/RB_CHN_NAME/$RB_CHN_NAME/g" \
