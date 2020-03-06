@@ -1,5 +1,5 @@
 #!/bin/bash
-while True
+while true
 do
 	date
 	./autofill.sh
