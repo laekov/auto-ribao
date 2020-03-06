@@ -1,0 +1,12 @@
+THU_ID=20xxyyzzzz
+THU_PASSWD="fill_your_password_here"
+
+RB_DPT_ID=024
+RB_DPT_NAME=计算机科学与技术系
+
+RB_CHN_NAME=黄大伯
+RB_PROVINCE=宇宙省
+RB_CITY=银河市
+RB_DISTRICT=阿尔法区
+RB_ADDR=断头路三号四栋五单元六楼
+
