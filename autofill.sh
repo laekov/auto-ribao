@@ -2,7 +2,7 @@
 
 source info.txt
 
-VERBOSE_MODE=-q
+VERBOSE_MODE=-s
 
 mkdir -p tmp
 
