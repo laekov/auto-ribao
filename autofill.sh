@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source info.txt
 
 VERBOSE_MODE=-s
@@ -11,7 +10,7 @@ curl $VERBOSE_MODE -c tmp/0.cookie -L http://os.tsinghua.edu.cn > tmp/0.html
 if [ $? != 0 ]
 then
 	echo "Network gg"
-	exit
+	exit 1
 fi
 
 curl $VERBOSE_MODE -L -X POST \
@@ -24,7 +23,7 @@ curl $VERBOSE_MODE -L -X POST \
 if [ $? != 0 ]
 then
 	echo "Login incorrect"
-	exit
+	exit 2
 fi
 
 	
@@ -33,7 +32,7 @@ NEXT_LINK=$(cat tmp/1.html | grep window | cut -d '"' -f 2)
 if [ .$NEXT_LINK = . ]
 then
 	echo "Login failed"
-	exit
+	exit 3
 fi
 
 echo $NEXT_LINK
@@ -45,7 +44,7 @@ curl $VERBOSE_MODE -L \
 if [ $? != 0 ]
 then
 	echo "Failed to jump to " $NEXT_LINK
-	exit
+	exit 4
 fi
 
 
@@ -60,7 +59,9 @@ curl $VERBOSE_MODE -L -X POST \
 if [ $? != 0 ]
 then
 	echo "Failed to upload the form"
+    exit 5
 else
 	echo "Success"
+    exit 0
 fi
 
