@@ -1,7 +1,12 @@
-#!/bin/bash
-while true
+#~/bin/bashi
+last=20200315
+while true 
 do
-	date
-	./autofill.sh
-	sleep 24h
+  cur=`date +%Y%m%d`
+  if [ "$last" != "$cur" ]; then
+    date
+    ./autofill.sh
+    last=$cur
+  fi
+  sleep 1h
 done
